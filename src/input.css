@@ -2,17 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Blacksword";
-  src: url("fonts/Blacksword.otf");
+@layer base {
+  @font-face {
+    font-family: 'Blacksword';
+    src: url('../../src/fonts/Blacksword.otf') format('opentype');
+    font-style: normal;
+    font-weight: 900;
+  }
 }
 
-@layer utilities {
-  .section-min-height {
-    min-height: calc(100vh - 68px);
+@layer components {
+  body {
+    @apply [&:not(motion-reduce)]:animate-fadeIn;
+    @apply overflow-x-hidden;
   }
 
-  /* .toggle-btn {
-    @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg]
-  } */
+  .title {
+    @apply font-Blacksword font-extrabold italic text-8xl text-center;
+    @apply -rotate-[3deg] w-[60%] leading-[7rem];
+    background-image: linear-gradient(to right,
+      theme('colors.titleColour1') 0%,
+      theme('colors.titleColour2') 20%,
+      theme('colors.titleColour3') 40%,
+      theme('colors.titleColour4') 60%,
+      theme('colors.titleColour5') 80%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  #project-title {
+    @apply mt-[-12%];
+    @apply leading-[1.5];
+  }
+
+  .title:not(#project-title) {
+    @apply [&:not(motion-reduce)]:animate-fadeIn delay-[2000ms];
+  }
+
+  .arrows {
+    @apply absolute top-[93%] left-[50%] opacity-30;
+    @apply transform translate-x-[-50%] translate-y-[-50%];
+  }
+
+  .arrows span {
+    @apply block w-12 h-12 -m-2.5 rotate-45;
+    @apply border-[6px] border-b-arrowColour border-r-arrowColour border-l-0 border-t-0 transform scale-150;
+    @apply hover:border-b-arrowHoverColour hover:border-r-arrowHoverColour;
+    @apply [&:not(motion-reduce)]:animate-arrowsDown;
+  }
+
+  .arrows span:nth-child(2) {
+    @apply delay-200;
+  }
+
+  .arrows span:nth-child(3) {
+    @apply delay-[400ms];
+  }
+
+  section h2 {
+    @apply font-bold text-4xl text-sectionTitleColour;
+  }
+
+  #intro,
+  .statement,
+  .project {
+    @apply border-[1px] border-solid border-sectionBorderColour p-10;
+  }
+
+  .card {
+    @apply flex flex-col min-h-[300px] min-w-[400px];
+    @apply bg-cardBackgroundColour text-cardTextColour opacity-90;
+    @apply border-solid border-2 border-cardBorderColour;
+    @apply rounded-xl items-center justify-center;
+  }
+
+  .button1 {
+    @apply font-bold py-2 px-4 text-center bg-button1Colour text-button1TextColour;
+    @apply border-2 border-button1BorderColour hover:bg-button1HoverColour rounded-md;
+  }
+
+  .button2 {
+    @apply text-3xl font-bold py-5 px-[2.3rem] w-1/5 text-center bg-button2Colour text-button2TextColour;
+    @apply border-2 border-button2BorderColour hover:bg-button2HoverColour rounded-full;
+    @apply items-center justify-center;
+  }
+
+  .button3 {
+    @apply text-xl py-2 px-4 w-[23%] text-center bg-button3Colour text-button3TextColour;
+    @apply border-2 border-button3BorderColour hover:bg-button3HoverColour rounded-md;
+    @apply flex flex-row place-content-evenly m-3;
+  }
+
+  footer {
+    @apply w-full flex flex-col;
+    @apply bg-footerBackgroundColour text-footerTextColour border border-t-mainBorderColour;
+
+    div:nth-of-type(1) {
+      @apply flex flex-row text-2xl font-bold place-content-evenly text-center m-3;
+    }
+
+    div:nth-of-type(2) {
+      @apply flex flex-row place-content-evenly text-center mx-12;
+    }
+
+    div:nth-of-type(3) {
+      @apply flex flex-row place-content-evenly text-center my-4;
+    }
+
+    h5 {
+      @apply text-[black] text-end font-bold text-sm pe-5;
+    }
+  }
 }

@@ -2,50 +2,83 @@
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
-  content: ["./build/index.html", "./build/projects/*.html" /*"./build/js/script.js"*/],
+  content: ["./build/index.html", "./build/projects/*.html"],
+
   theme: {
+    colors: {
+      backgroundColour: "#000000",
+      mainBorderColour: "#ff0000",
+      arrowColour: "#cc00cc",
+      arrowHoverColour: "#32cd32",
+      primaryTextColour: "#ffffff",
+      cardBackgroundColour: "#66ffff",
+      cardTitleColour: "",
+      cardTextColour: "#000000",
+      cardBorderColour: "#ff0000",
+      sectionTitleColour: "#008000",
+      sectionBorderColour: "#404040",
+      button1Colour: "",
+      button1TextColour: "",
+      button1BorderColour: "",
+      button1HoverColour: "",
+      button2Colour: "",
+      button2TextColour: "",
+      button2BorderColour: "",
+      button2HoverColour: "",
+      button3Colour: "",
+      button3TextColour: "",
+      button3BorderColour: "",
+      button3HoverColour: "",
+      footerBackgroundColour: "#737373",
+      footerTextColour: "#d9d9d9",
+      titleColour1: "#cc00cc",
+      titleColour2: "#00e6e6",
+      titleColour3: "#63b4cf",
+      titleColour4: "#ffb3bf",
+      titleColour5: "#65e765",
+      transparent: "transparent",
+    },
+
     screens: {
       sm: { raw: "(min-width: 480px)" },
       md: { raw: "(min-width: 768px)" },
       lg: { raw: "(min-width: 976px)" },
       xl: { raw: "(min-width: 1440px)" },
     },
+
     extend: {
       fontFamily: {
-        blacksword: ["Blacksword", "sans-serif"],
+        Blacksword: ["Blacksword", "sans-serif"],
       },
-      colors: {
-        titleColour1: "#cc00cc",
-        titleColour2: "#00e6e6",
-        titleColour3: "#63b4cf",
-        titleColour4: "#ffb3bf",
-        titleColour5: "#65e765",
-      },
-      backgroundImage: {
-        titleSplash: "url('src/images/splash.webp')",
-        projectSplash: "url('src/images/splash.png')",
-        titleGradient: "linear-gradient(to right, ${theme(`colors.titleColour1`)}, ${theme(`colors.titleColour2`)}, ${theme(`colors.titleColour3`)}, ${theme(`colors.titleColour4`)}, ${theme(`colors.titleColour5`)})",
-      },
-      // Wrap each with @media (prefers-reduced-motion: no-preference)
+
       animation: {
-        tronRider: "",
-        arrowsDown: "",
-        buttonFlash: "",
-        bounce: "menuBounce 0.5s ease-in-out forwards",
+        fadeIn: "fadeFrames 2000ms ease-in",
+        tronRider: "tronFrames 8000ms infinite",
+        arrowsDown: "arrowFrames 2000ms infinite",
+        buttonFlash: "buttonFrames 1000ms ease-in-out forwards",
       },
+
       keyframes: {
-        tronRider: {},
-        arrowsDown: {},
-        buttonFlash: {},
-        bounce: {
-          "0%": { transform: "scaleY(0)" },
-          "80%": { transform: "scaleY(1.2)" },
-          "100%": { transform: "scaleY(1)" },
+        fadeFrames: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
         },
+
+        tronFrames: {},
+
+        arrowFrames: {
+          "0%": { opacity: 0, transform: "rotate(45deg) translate(-20px, -20px)" },
+          "40%": { opacity: 1 },
+          "100%": { opacity: 0, transform: "rotate(45deg) translate(20px, 20px)" },
+        },
+
+        buttonFrames: {},
       },
     },
+    purge: ["./src/**.*.{css, js}", "./build/**.*.{css, js}"],
+
     plugins: [
-      plugin(({ theme, addUtilities }) => {
+      plugin(({ addUtilities, theme }) => {
         const neonBorders = {};
         const colours = theme("colors");
 
@@ -66,3 +99,4 @@ module.exports = {
     ],
   },
 };
+

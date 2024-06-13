@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "main": "tailwind.config.js",
   "scripts": {
-    "watch": "tailwindcss -i ./src/input.css -o ./css/style.css --watch",
-    "build": "tailwindcss -i ./src/input.css -o ./css/style.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./build/css/style.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./build/css/style.css",
     "prettier": "npx prettier --write **/*.html"
   },
   "keywords": [],
   "author": "Chris Fairweather & Steve Schrader",
   "license": "ISC",
-  "description": "GradShow project website. Outlines projects developed by Diploma of Web Development students.",
+  "description": "GradShow project website. Showcases projects developed by Diploma of Information Technology students.",
   "devDependencies": {
     "tailwindcss": "^3.4.4"
   }
