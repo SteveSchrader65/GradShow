@@ -12,6 +12,10 @@
 }
 
 @layer components {
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply [&:not(motion-reduce)]:animate-fadeIn;
     @apply overflow-x-hidden;
@@ -19,7 +23,7 @@
 
   .title {
     @apply font-Blacksword font-extrabold italic text-8xl text-center;
-    @apply -rotate-[3deg] w-[60%] leading-[7rem];
+    @apply -rotate-[3deg] w-[60%] leading-[7rem] hover:cursor-default;
     background-image: linear-gradient(to right,
       theme('colors.titleColour1') 0%,
       theme('colors.titleColour2') 20%,
@@ -39,6 +43,16 @@
 
   .title:not(#project-title) {
     @apply [&:not(motion-reduce)]:animate-fadeIn delay-[2000ms];
+  }
+
+  #tron {
+    @apply w-[4.5rem] h-9 sm:w-24 sm:h-12 md:w-28 md:h-14 lg:w-32 lg:h-16 xl:w-36 xl:h-[4.5rem];
+    @apply bg-button1Colour flex items-center justify-center text-4xl text-cardTitleColour;
+    @apply absolute top-[58%] left-[40%] rotate-90 scale-[0.08] text-center;
+    @apply translate-x-[-50%] translate-y-[-50%];
+    @apply /* animate-tronBike1 */ animate-tronBike2;
+    /* @apply animate-[tronBike1,_tronBike2]; */
+
   }
 
   .arrows {
@@ -62,7 +76,7 @@
   }
 
   section h2 {
-    @apply font-bold text-4xl text-sectionTitleColour;
+    @apply font-bold text-3xl text-sectionTitleColour;
   }
 
   #intro,
@@ -78,19 +92,20 @@
     @apply rounded-xl items-center justify-center;
   }
 
-  .button1 {
+  /* Add drop-shadows to buttons */
+  .buttonOne {
     @apply font-bold py-2 px-4 text-center bg-button1Colour text-button1TextColour;
     @apply border-2 border-button1BorderColour hover:bg-button1HoverColour rounded-md;
   }
 
-  .button2 {
+  .buttonTwo {
     @apply text-3xl font-bold py-5 px-[2.3rem] w-1/5 text-center bg-button2Colour text-button2TextColour;
     @apply border-2 border-button2BorderColour hover:bg-button2HoverColour rounded-full;
     @apply items-center justify-center;
   }
 
-  .button3 {
-    @apply text-xl py-2 px-4 w-[23%] text-center bg-button3Colour text-button3TextColour;
+  .buttonThree {
+    @apply text-lg py-2 w-[18%] text-center bg-button3Colour text-button3TextColour;
     @apply border-2 border-button3BorderColour hover:bg-button3HoverColour rounded-md;
     @apply flex flex-row place-content-evenly m-3;
   }
@@ -115,4 +130,8 @@
       @apply text-[black] text-end font-bold text-sm pe-5;
     }
   }
+}
+
+@layer utilities {
+
 }
