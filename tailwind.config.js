@@ -11,11 +11,12 @@ module.exports = {
       arrowHoverColour: "#32cd32",
       primaryTextColour: "#ffffff",
       cardBackgroundColour: "#66ffff",
-      cardTitleColour: "hotpink",
+      cardTitleColour: "#cc00cc",
       cardTextColour: "#000000",
       cardBorderColour: "#ff0000",
       sectionTitleColour: "#008000",
       sectionBorderColour: "#404040",
+
       button1Colour: "dodgerblue",
       button1TextColour: "pink",
       button1BorderColour: "yellow",
@@ -28,6 +29,7 @@ module.exports = {
       button3TextColour: "yellow",
       button3BorderColour: "lightblue",
       button3HoverColour: "lightgreen",
+
       footerBackgroundColour: "#737373",
       footerTextColour: "#d9d9d9",
       titleColour1: "#cc00cc",
@@ -51,13 +53,13 @@ module.exports = {
       },
 
       // transitionTimingFunction: ({theme}) => ({
-      //   animationDelay: [ "2000", "2000ms"],
+      //   delay2000: [ "2000", "2000ms"],
       // }),
 
       animation: {
         fadeIn: "fadeFrames 2000ms ease-in",
-        tronBike1: "tronFrames1 300ms infinite",
-        tronBike2: "tronFrames2 20000ms 500ms infinite",
+        tronBounce: "tronFrames1 300ms infinite",
+        tronRun: "tronFrames2 20000ms 500ms infinite",
         arrowsDown: "arrowFrames 2000ms infinite",
         buttonFlash: "buttonFrames 1000ms ease-in-out forwards",
       },

@@ -50,8 +50,8 @@
     @apply bg-button1Colour flex items-center justify-center text-4xl text-cardTitleColour;
     @apply absolute top-[58%] left-[40%] rotate-90 scale-[0.08] text-center;
     @apply translate-x-[-50%] translate-y-[-50%];
-    @apply /* animate-tronBike1 */ animate-tronBike2;
-    /* @apply animate-[tronBike1,_tronBike2]; */
+    /* @apply animate-[tronBounce,_tronRun]; */
+    @apply /* animate-tronBounce */ animate-tronRun;
 
   }
 
