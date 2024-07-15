@@ -80,22 +80,42 @@ module.exports = {
           "12%": { transform: "translateY(200%) translateX(55%) scale(1.0) rotate(90deg)" },
 
           // Lean to left
-          "13%": { transform: "translateY(200%) translateX(55%) scale(1.0) rotate(80deg)" },
+          "13%": { transform: "translateY(200%) translateX(55%) scale(1.0) rotate(75deg)" },
 
           // Move to left
-          "25%": { transform: "translateY(200%) translateX(-75%) scale(1.0) rotate(80deg)" },
+          "20%": { transform: "translateY(200%) translateX(-45%) scale(1.0) rotate(75deg)" },
 
           // Bike upright
-          "26%": { transform: "translateY(200%) translateX(-75%) scale(1.0) rotate(90deg)" },
+          "21%": { transform: "translateY(200%) translateX(-45%) scale(1.0) rotate(90deg)" },
 
           // Move ahead and scale down
-          "35%": { transform: "translateY(170%) translateX(-72%) scale(0.8) rotate(90deg)" },
+          "24%": { transform: "translateY(185%) translateX(-42%) scale(0.9) rotate(90deg)" },
 
-          // Lean right
-          "40%": { transform: "translateY(170%) translateX(-72%) scale(0.8) rotate(100deg)" },
+          // Lean to right
+          "26%": { transform: "translateY(185%) translateX(-42%) scale(0.9) rotate(105deg)" },
 
           // Move to right
-          "50%": { transform: "translateY(170%) translateX(85%) scale(0.8) rotate(100deg)" },
+          "30%": { translate: "translateY(185%) translateX(85%) scale(0.9) rotate(105deg)" },
+
+          // Bike upright
+          "31%": { transform: "translateY(185%) translateX(85%) scale(0.9) rotate(90deg)" },
+
+          // Move ahead and scale down
+          "35%": { transform: "translateY(170%) translateX(85%) scale(0.8) rotate(90deg)" },
+
+          // Lean left
+          "36%": { transform: "translateY(170%) translateX(85%) scale(0.8) rotate(75deg)" },
+
+          // Move to left
+
+          //
+
+          //
+
+          //
+
+          // Move to right
+          "50%": { transform: "translateY(170%) translateX(85%) scale(0.8) rotate(105deg)" },
 
           // Bike upright
           "51%": { transform: "translateY(170%) translateX(85%) scale(0.8) rotate(90deg)" },
@@ -104,16 +124,16 @@ module.exports = {
           "55%": { transform: "translateY(200%) translateX(85%) scale(1.0) rotate(90deg)" },
 
           // Lean left, and move to left
-          "60%": { transform: "translateY(200%) translateX(85%) scale(1.0) rotate(80deg)" },
-          "64%": { transform: "translateY(200%) translateX(-15%) scale(1.0) rotate(80deg)" },
+          "60%": { transform: "translateY(200%) translateX(85%) scale(1.0) rotate(75deg)" },
+          "64%": { transform: "translateY(200%) translateX(-15%) scale(1.0) rotate(75deg)" },
 
           // Bike upright for 0.5sec ...
           "65%": { transform: "translateY(200%) translateX(-15%) scale(1.0) rotate(90deg)" },
           "68%": { transform: "translateY(195%) translateX(-15%) scale(1.0) rotate(90deg)" },
 
           // Lean right and move right slightly
-          "69%": { transform: "translateY(200%) translateX(-15%) scale(1.0) rotate(100deg)" },
-          "70%": { transform: "translateY(200%) translateX(10%) scale(1.0) rotate(100deg)" },
+          "69%": { transform: "translateY(200%) translateX(-15%) scale(1.0) rotate(105deg)" },
+          "70%": { transform: "translateY(200%) translateX(10%) scale(1.0) rotate(105deg)" },
           "72%": { transform: "translateY(200%) translateX(10%) scale(1.0) rotate(90deg)" },
 
           // Bounce
@@ -123,8 +143,10 @@ module.exports = {
           //       bounce, lean right and return to center
 
           // Return to starting position. 80% point gives extra time for ride into sunset ...
-          "76%": { transform: "translateY(200%) translateX(55%) scale(1.0) rotate(100deg)" },
+          "76%": { transform: "translateY(200%) translateX(55%) scale(1.0) rotate(105deg)" },
           "76.1%": { transform: "translateY(200%) translateX(55%) scale(1.0) rotate(90deg)" },
+
+          // "88%": { transform: "" },
           "100%": { transform: "translateY(58%) translateX(40%) scale(0.08) rotate(90deg)" },
         },
 
